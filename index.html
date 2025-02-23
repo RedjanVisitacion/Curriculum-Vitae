@@ -1,193 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Responsive Resume UI Design in HTML and CSS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <meta charset="utf-8">
+    <title>Redjan's CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- External CSS Link -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <!-- Icons and Fonts -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
 <body>
 
+<!-- Resume Wrapper -->
 <div class="resume_wrapper">
-	<div class="resume_left">
-		<div class="resume_image">
-			<img src="pic.jpg" alt="Resume_image">
-		</div>
-		<div class="resume_bottom">
-			<div class="resume_item resume_namerole">
-				<div class="name">Rosie Jackson</div>
-				<div class="role">UI Designer</div>
-			</div>
-			<div class="resume_item resume_profile">
-				<div class="resume_title">Profile</div>
-				<div class="resume_info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-			</div>
-			<div class="resume_item resume_address">
-				<div class="resume_title">Address</div>
+    
+    <!-- Left Section of Resume (Profile, Contact, Skills) -->
+    <div class="resume_left">
+        <!-- Profile Image -->
+        <div class="resume_image">
+            <img src="pic.jpg" alt="Redjan Visitacion">
+        </div>
+        
+        <div class="resume_bottom">
+            <!-- Profile Title -->
+            <div class="resume_item resume_namerole">
+                <div class="name">Profile</div>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="resume_item resume_contact">
+                <div class="resume_title">Contact</div>
+                <div class="resume_info">
+                    <p><i class="fas fa-phone"></i> +63 9534 181 760</p>
+                    <p><i class="fas fa-envelope"></i> visitacionredjanphils@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Purok 4, Mobod, Oroquieta City</p>
+                </div>
+            </div>
+
+			
+            
+            <!-- Skills Section -->
+            <div class="resume_item resume_skills">
+                <div class="resume_title">Skills</div>
+                <div class="resume_info">
+                    
+                    <div class="skills_list">
+                        <p><i class="fas fa-camera"></i> Photographer</p>
+                        <div class="skills_bar"><span style="width: 90%"></span></div>
+                    </div>
+                    
+                    <div class="skills_list">
+                        <p><i class="fas fa-palette"></i> Designer</p>
+                        <div class="skills_bar"><span style="width: 80%"></span></div>
+                    </div>
+                    
+                    <div class="skills_list">
+                        <p><i class="fas fa-code"></i> Programming</p>
+                        <div class="skills_bar"><span style="width: 50%"></span></div>
+                    </div>
+                    
+                    <div class="skills_list">
+                        <p><i class="fas fa-video"></i> Video Editing</p>
+                        <div class="skills_bar"><span style="width: 95%"></span></div>
+                    </div>
+                </div>
+            </div>
+
+			<!-- References Section -->
+			<div class="resume_item resume_references">
+				<div class="resume_title">References</div>
 				<div class="resume_info">
-					18th home,<br/>
-					woods street,<br/>
-					New York City, United States
+					<p><strong>Silver Mae S. Heyrana</strong> Student of USTP</p>
+					<p><strong>Email: </strong>silvermaesheyrana@gmail.com | Phone: +63 987 654 321</p>
 				</div>
 			</div>
-			<div class="resume_item resume_contact">
-				<div class="resume_title">Contact</div>
-				<div class="resume_info">
-					<div class="resume_subtitle">Phone</div>
-					<div class="resume_subinfo">+62 000 222 333</div>
-				</div>
-				<div class="resume_info">
-					<div class="resume_subtitle">Email</div>
-					<div class="resume_subinfo">rosiejack@gmail.com</div>
-				</div>
-			</div>
-			<div class="resume_item resume_skills">
-				<div class="resume_title">Skills</div>
-				<div class="resume_info">
-					<div class="skills_list">
-						<div class="skills_left">HTML</div>
-						<div class="skills_bar">
-							<p>
-								<span style="width: 90%"></span>
-							</p>
-						</div>
-					</div>
-					<div class="skills_list">
-						<div class="skills_left">CSS</div>
-						<div class="skills_bar">
-							<p>
-								<span style="width: 80%"></span>
-							</p>
-						</div>
-					</div>
-					<div class="skills_list">
-						<div class="skills_left">Javascript</div>
-						<div class="skills_bar">
-							<p>
-								<span style="width: 50%"></span>
-							</p>
-						</div>
-					</div>
-					<div class="skills_list">
-						<div class="skills_left">Photoshop</div>
-						<div class="skills_bar">
-							<p>
-								<span style="width: 95%"></span>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="resume_right">
-		<div class="resume_item resume_namerole">
-			<div class="name">Rosie Jackson</div>
-			<div class="role">UI Designer</div>
-		</div>
-		<div class="resume_item resume_education">
-			<div class="resume_title">Education</div>
-			<div class="resume_info">
-				<div class="resume_data">
-					<div class="year">2000 - 2010</div>
-					<div class="content">
-						<p>Title</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="resume_data">
-					<div class="year">2010 - 2013</div>
-					<div class="content">
-						<p>Title</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="resume_data">
-					<div class="year">2013 - 2015</div>
-					<div class="content">
-						<p>Title</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="resume_item resume_experience">
-			<div class="resume_title">Experience</div>
-			<div class="resume_info">
-				<div class="resume_data">
-					<div class="year">2000 - 2010</div>
-					<div class="content">
-						<p>Title</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="resume_data">
-					<div class="year">2010 - 2013</div>
-					<div class="content">
-						<p>Title</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="resume_data">
-					<div class="year">2013 - 2015</div>
-					<div class="content">
-						<p>Title</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="resume_data">
-					<div class="year">2013 - 2015</div>
-					<div class="content">
-						<p>Title</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="resume_data">
-					<div class="year">2013 - 2015</div>
-					<div class="content">
-						<p>Title</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="resume_item resmue_interests">
-			<div class="resume_title">Interests</div>
-			<div class="resume_info">
-				<div class="interests">
-					<div class="int_icon">
-						<i class="fas fa-volleyball-ball"></i>
-					</div>
-					<div class="int_data">Volleyball</div>
-				</div>
-				<div class="interests">
-					<div class="int_icon">
-						<i class="fas fa-book-open"></i>
-					</div>
-					<div class="int_data">Reading</div>
-				</div>
-				<div class="interests">
-					<div class="int_icon">
-						<i class="fas fa-film"></i>
-					</div>
-					<div class="int_data">Movies</div>
-				</div>
-				<div class="interests">
-					<div class="int_icon">
-						<i class="fas fa-biking"></i>
-					</div>
-					<div class="int_data">Riding</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        </div>
+    </div>
+    
+    <!-- Right Section of Resume (About, Education, Experience, Personal Data) -->
+    <div class="resume_right">
+        
+        <!-- Name and Role -->
+        <div class="resume_item resume_namerole">
+            <div class="name">Redjan Phil S. Visitacion</div>
+            <div class="role">Second Year College Student</div>
+        </div>
+
+        <!-- About Me Section -->
+        <div class="resume_item resume_about">
+            <div class="resume_title">About Me</div>
+            <div class="resume_info">
+                <p>A passionate and creative student with a strong interest in photography, design, and programming. Skilled in video editing and always eager to learn new technologies.</p>
+            </div>
+        </div>
+
+		 <!-- Personal Data Section -->
+		 <div class="resume_item resume_personal_data">
+            <div class="resume_title">Personal Data</div>
+            <div class="resume_info">
+                <ul>
+                    <li><strong>Date of Birth:</strong> July 9, 2005</li>
+                    <li><strong>Citizenship:</strong> Filipino</li>
+                    <li><strong>Birth Place:</strong> Purok – 4 Mobod</li>
+                    <li><strong>Civil Status:</strong> Single</li>
+                    <li><strong>Age:</strong> 18</li>
+                    <li><strong>Height:</strong> 5’7</li>
+                    <li><strong>Sex:</strong> Male</li>
+                    <li><strong>Weight:</strong> 64 kg</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="resume_item resume_education">
+            <div class="resume_title">Education</div>
+            <div class="resume_info">
+                <ol>
+                    <li><strong>COLLEGE:</strong> University of Science and Technology of Southern Philippines, P – 2 Mobod, Oroquieta City</li>
+                    <li><strong>SENIOR HIGH SCHOOL:</strong> Deor & Dune Academe School of Technology, Inc. (2020 – 2023), P – 1 Mobod, Oroquieta City</li>
+                    <li><strong>JUNIOR HIGH SCHOOL:</strong> Mobod Integrated School (2016 – 2020), P – 2 Mobod, Oroquieta City</li>
+                    <li><strong>ELEMENTARY LEVEL:</strong> Mobod Integrated School (2010 – 2016), P – 2 Mobod, Oroquieta City</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="resume_item resume_experience">
+            <div class="resume_title">Experience</div>
+            <div class="resume_info">
+                <p><i class="fas fa-briefcase"></i> Freelance Photographer & Designer</p>
+                <p>Worked with multiple clients on photography, branding, and design projects.</p>
+                <p><i class="fas fa-briefcase"></i> On-the-job training at Provincial Agriculture’s Office (SPES Program)</p>
+                <p><i class="fas fa-briefcase"></i> Completed assessment training of Computer System Servicing NCII</p>
+                <p><i class="fas fa-briefcase"></i> Technician experience at Micron Electronics</p>
+            </div>
+        </div>
+
+       
+
+        <!-- Button to Navigate to Next Resume -->
+        <div class="#">
+            <button onclick="nextResume()">Next Resume</button>
+        </div>
+    </div>
 </div>
+
+<!-- JavaScript for Navigation -->
+<script>
+    function nextResume() {
+        window.location.href = "#";
+    }
+</script>
 
 </body>
 </html>
