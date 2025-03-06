@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #0175b2, #003c6e);
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.resume_wrapper {
+    display: flex;
+    width: 850px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.resume_wrapper:hover {
+    transform: scale(1.02);
+}
+
+.resume_left {
+    width: 35%;
+    background: linear-gradient(135deg, #1e1d24, #292930);
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.resume_left .resume_image {
+    width: 100%;
+    border-bottom: 4px solid #0175b2;
+}
+
+.resume_left .resume_image img {
+    width: 100%;
+    display: block;
+}
+
+.resume_title {
+    color: #0175b2;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.resume_left .resume_info {
+    color: #c2c2c2;
+    padding-left: 20px;
+}
+
+.resume_left .resume_bottom {
+    padding: 20px;
+}
+
+.resume_item {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.resume_item:last-child {
+    border-bottom: none;
+}
+
+.resume_namerole .name {
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.resume_namerole .role {
+    color: #c2c2c2;
+    font-size: 14px;
+}
+
+.resume_contact .resume_info p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.resume_contact .resume_info p i {
+    color: #0175b2;
+}
+
+.resume_skills .skills_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resume_skills .skills_list p {
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.resume_skills .skills_bar {
+    background: #333;
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume_skills .skills_bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #0175b2, #00aaff);
+    transition: width 0.5s ease-in-out;
+}
+
+/* Right Side Styling */
+.resume_right {
+    width: 65%;
+    padding: 30px;
+    color: #333;
+}
+
+.resume_right .resume_namerole .name {
+    font-size: 28px;
+    color: #222;
+}
+
+.resume_right .resume_namerole .role {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.resume_right .resume_title {
+    color: #0175b2;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #0175b2;
+    padding-bottom: 5px;
+}
+
+.resume_data {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.resume_data .year {
+    color: #0175b2;
+    font-weight: 700;
+    width: 100px;
+    position: relative;
+}
+
+.resume_data .year::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    background: #0175b2;
+    border-radius: 50%;
+}
+
+.resume_data .year::after {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 15px;
+    width: 2px;
+    height: 100%;
+    background: #0175b2;
+}
+
+.resume_data:last-child .year::after {
+    display: none;
+}
+
+/* Enhanced Button */
+.resume_next {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.resume_next button {
+    background: linear-gradient(120deg, #0175b2, #003c6e);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.resume_next button:hover {
+    background: linear-gradient(120deg, #00aaff, #005a9e);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 850px) {
+    .resume_wrapper {
+        flex-direction: column;
+        width: 95%;
+    }
+    .resume_left,
+    .resume_right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .resume_right {
+        padding: 20px;
+    }
+    .resume_data {
+        flex-direction: column;
+    }
+    .resume_data .year {
+        width: 100%;
+    }
+    .resume_data .year::before,
+    .resume_data .year::after {
+        display: none;
+    }
+}
