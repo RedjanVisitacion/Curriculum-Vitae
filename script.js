@@ -1,92 +1,105 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript file loaded successfully!");
-
+  
     function nextResume() {
-        window.location.href = "silver.html";
+      window.location.href = "silver.html";
     }
-
-    // Toggle certificate section
+  
+    // Toggle certificate section (for certificate containers)
     function toggleSection(sectionId) {
-        var section = document.getElementById(sectionId);
-        if (!section) return; // Prevent errors if the section doesn't exist
-
-        // Check if the clicked section is already visible
-        var isHidden = section.classList.contains("hidden");
-
-        // Hide all other sections
-        document.querySelectorAll(".certificate-container").forEach(function (sec) {
-            sec.classList.add("hidden");
-        });
-
-        // Show the clicked section if it was hidden
-        if (isHidden) {
-            section.classList.remove("hidden");
-        }
+      var section = document.getElementById(sectionId);
+      if (!section) return; // Prevent errors if the section doesn't exist
+  
+      var isHidden = section.classList.contains("hidden");
+  
+      // Hide all other certificate containers
+      document.querySelectorAll(".certificate-container").forEach(function (sec) {
+        sec.classList.add("hidden");
+      });
+  
+      // Toggle the clicked section
+      if (isHidden) {
+        section.classList.remove("hidden");
+      }
     }
-
+  
     // Function to close a specific certificate section
     function closeSection(sectionId) {
-        var section = document.getElementById(sectionId);
-        if (section) {
-            section.classList.add("hidden");
-        }
+      var section = document.getElementById(sectionId);
+      if (section) {
+        section.classList.add("hidden");
+      }
     }
-
-    // Prevent dropdown from closing when clicking inside
+  
+    // Prevent certificate container dropdown from closing when clicking inside
     document.querySelectorAll(".certificate-container").forEach(function (section) {
-        section.addEventListener("click", function (event) {
-            event.stopPropagation(); // Prevent click from closing dropdown
-        });
+      section.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
     });
-
-    // Close dropdown if the user clicks outside
+  
+    // Close certificate dropdown if user clicks outside
     document.addEventListener("click", function (event) {
-        if (!event.target.closest(".certificate-container, .toggle-btn")) {
-            document.querySelectorAll(".certificate-container").forEach(function (section) {
-                section.classList.add("hidden");
-            });
-        }
+      if (!event.target.closest(".certificate-container, .toggle-btn")) {
+        document.querySelectorAll(".certificate-container").forEach(function (section) {
+          section.classList.add("hidden");
+        });
+      }
     });
-
+  
     // Function to open the image in fullscreen
     function maximizeImage(src) {
-        let modal = document.getElementById("imageModal");
-
-        if (!modal) {
-            // Create modal if it doesn't exist
-            modal = document.createElement("div");
-            modal.id = "imageModal";
-            modal.className = "modal";
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <img id="modalImage" src="" alt="Certificate">
-                </div>
-            `;
-            document.body.appendChild(modal);
-        }
-
-        // Set image source and show modal
-        document.getElementById("modalImage").src = src;
-        modal.style.display = "flex";
-
-        // Close modal when clicking outside the image or on close button
-        modal.onclick = function(event) {
-            if (event.target === modal || event.target.classList.contains("close-modal")) {
-                modal.style.display = "none";
-            }
-        };
+      let modal = document.getElementById("imageModal");
+  
+      if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "imageModal";
+        modal.className = "modal";
+        modal.innerHTML = `
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="Certificate">
+          </div>
+        `;
+        document.body.appendChild(modal);
+  
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal || event.target.classList.contains("close-modal")) {
+            modal.style.display = "none";
+          }
+        });
+      }
+  
+      document.getElementById("modalImage").src = src;
+      modal.style.display = "flex";
     }
-
+  
     // Attach click event to all certificate images
     document.querySelectorAll(".certificate-container img").forEach(function (img) {
-        img.addEventListener("click", function () {
-            maximizeImage(this.src);
-        });
+      img.addEventListener("click", function () {
+        maximizeImage(this.src);
+      });
     });
 
-    // Expose functions globally
+    document.addEventListener("DOMContentLoaded", function () {
+        // Toggle dropdown for a given dropdown ID
+        function toggleDropdown(dropdownId) {
+          var dropdown = document.getElementById(dropdownId);
+          if (dropdown) {
+            dropdown.classList.toggle("hidden");
+          }
+        }
+        // Expose the function globally so your HTML button can call it
+        window.toggleDropdown = toggleDropdown;
+      });
+      
+  
+    
+  
+    // Expose functions globally so they can be called from HTML attributes
     window.toggleSection = toggleSection;
     window.closeSection = closeSection;
     window.nextResume = nextResume;
-});
+    window.toggleDropdown = toggleDropdown;
+  });
+  

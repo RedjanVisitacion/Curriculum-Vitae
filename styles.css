@@ -245,6 +245,49 @@ body {
         display: none;
     }
 }
+/* Credentials Container */
+.credentials-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: left;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.dropdown-btn i {
+    float: right;
+}
+
+/* Hidden Dropdown Content */
+.dropdown-content {
+    display: none;
+    background: #f9f9f9;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Show Content */
+.show {
+    display: block !important;
+}
+
 
 /* For Certificate */
 .toggle-btn {
