@@ -246,8 +246,7 @@ body {
     }
 }
 
-/* CSS for Styling */
-
+/* For Certificate */
 .toggle-btn {
     padding: 10px;
     background-color: #007bff;
@@ -258,28 +257,102 @@ body {
     text-align: left;
     margin: 5px 0;
     font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .toggle-btn:hover {
     background-color: #0056b3;
 }
 
-.certificate-container {
+/* For Certificate Toggle Button */
+.toggle-btn {
     padding: 10px;
-    border: 1px solid #ddd;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin: 5px 0;
+    font-size: 16px;
     border-radius: 5px;
-    margin-bottom: 10px;
-    background: #f9f9f9;
+    transition: background-color 0.3s ease;
 }
 
+.toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Certificate Dropdown */
+.certificate-container {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: rgba(249, 249, 249, 0.98);
+    position: absolute;
+    top: 60px; /* Adjusted for better placement */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    display: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Show certificates */
+.certificate-container:not(.hidden) {
+    display: block;
+}
+
+/* Close Button (X) */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ff0000;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.close-btn:hover {
+    color: #cc0000;
+}
+
+/* Certificate Images */
 .certificate-container img {
     width: 100%;
     max-width: 500px;
     display: block;
-    margin: 5px 0;
+    margin: 10px auto;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Click Effect on Images */
+.certificate-container img:active {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* Fade-in effect for dropdown */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hide class */
 .hidden {
     display: none;
 }
-

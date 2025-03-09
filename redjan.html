@@ -77,42 +77,38 @@
     <div class="resume_info">
         
         <!-- DICT Certificates -->
-        <button class="toggle-btn" onclick="toggleSection('dict-certificates')">DICT Certificates</button>
-        <div id="dict-certificates" class="certificate-container hidden">
-            <img src="Cert/DICT/DICT.png" alt="DICT Certificate">
-        </div>
+<button class="toggle-btn" onclick="toggleSection('dict-certificates')">DICT Certificates</button>
+<div id="dict-certificates" class="certificate-container hidden">
+    <button class="close-btn" onclick="closeSection('dict-certificates')">✖</button>
+    <img src="Cert/DICT/DICT.png" alt="use data to see photos">
+</div>
 
-        <!-- TESDA Certificates -->
-        <button class="toggle-btn" onclick="toggleSection('tesda-certificates')">TESDA Certificates</button>
-        <div id="tesda-certificates" class="certificate-container hidden">
-            <img src="Cert/Tesda/Installing.png" alt="Installing Certificate">
-            <img src="Cert/Tesda/Introduction.png" alt="Introduction Certificate">
-            <img src="Cert/Tesda/Maintaining.png" alt="Maintaining Certificate">
-            <img src="Cert/Tesda/Networking.png" alt="Networking Certificate">
-            <img src="Cert/Tesda/Seting up Computer Servers.png" alt="Setting up Computer Servers">
-        </div>
+<!-- TESDA Certificates -->
+<button class="toggle-btn" onclick="toggleSection('tesda-certificates')">TESDA Certificates</button>
+<div id="tesda-certificates" class="certificate-container hidden">
+    <button class="close-btn" onclick="closeSection('tesda-certificates')">✖</button>
+    <img src="Cert/Tesda/Installing.png" alt="Installing Certificate">
+    <img src="Cert/Tesda/Introduction.png" alt="Introduction Certificate">
+    <img src="Cert/Tesda/Maintaining.png" alt="Maintaining Certificate">
+    <img src="Cert/Tesda/Networking.png" alt="Networking Certificate">
+    <img src="Cert/Tesda/Seting up Computer Servers.png" alt="use data to see photos">
+</div>
 
-        <!-- Microsoft Certificates -->
-        <button class="toggle-btn" onclick="toggleSection('microsoft-certificates')">Microsoft Certificates</button>
-        <div id="microsoft-certificates" class="certificate-container hidden">
-            <img src="Cert/Microsoft/CAMH-V.png" alt="CAMH-V Certificate">
-            <img src="Cert/Microsoft/DCC.png" alt="DCC Certificate">
-            <img src="Cert/Microsoft/DTFOD365.png" alt="DTFOD365 Certificate">
-            <img src="Cert/Microsoft/FAIC.png" alt="FAIC Certificate">
-            <img src="Cert/Microsoft/FOGAI.png" alt="FOGAI Certificate">
-            <img src="Cert/Microsoft/ITML.png" alt="ITML Certificate">
-        </div>
+<!-- Microsoft Certificates -->
+<button class="toggle-btn" onclick="toggleSection('microsoft-certificates')">Microsoft Certificates</button>
+<div id="microsoft-certificates" class="certificate-container hidden">
+    <button class="close-btn" onclick="closeSection('microsoft-certificates')">✖</button>
+    <img src="Cert/Microsoft/CAMH-V.png" alt="CAMH-V Certificate">
+    <img src="Cert/Microsoft/DCC.png" alt="DCC Certificate">
+    <img src="Cert/Microsoft/DTFOD365.png" alt="DTFOD365 Certificate">
+    <img src="Cert/Microsoft/FAIC.png" alt="FAIC Certificate">
+    <img src="Cert/Microsoft/FOGAI.png" alt="FOGAI Certificate">
+    <img src="Cert/Microsoft/ITML.png" alt="use data to see photos">
+</div>
+
 
     </div>
 </div>
-
-<!-- JavaScript to Toggle Image -->
-<script>
-    function toggleSection(sectionId) {
-        var section = document.getElementById(sectionId);
-        section.classList.toggle("hidden");
-    }
-</script>
 
 
 			<!-- References Section -->
@@ -126,7 +122,7 @@
         </div>
     </div>
     
-    <!-- Right Section of Resume (About, Education, Experience, Personal Data) -->
+    <!-- Section of Resume (About, Education, Experience, Personal Data) -->
     <div class="resume_right">
         
         <!-- Name and Role -->
@@ -230,11 +226,7 @@
 </div>
 
 <!-- JavaScript for Navigation -->
-<script>
-    function nextResume() {
-        window.location.href = "silver.html"; 
-    }
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
