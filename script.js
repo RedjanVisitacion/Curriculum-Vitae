@@ -48,6 +48,43 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Function to open the image in fullscreen
+    function maximizeImage(src) {
+        let modal = document.getElementById("imageModal");
+
+        if (!modal) {
+            // Create modal if it doesn't exist
+            modal = document.createElement("div");
+            modal.id = "imageModal";
+            modal.className = "modal";
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <img id="modalImage" src="" alt="Certificate">
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Set image source and show modal
+        document.getElementById("modalImage").src = src;
+        modal.style.display = "flex";
+
+        // Close modal when clicking outside the image or on close button
+        modal.onclick = function(event) {
+            if (event.target === modal || event.target.classList.contains("close-modal")) {
+                modal.style.display = "none";
+            }
+        };
+    }
+
+    // Attach click event to all certificate images
+    document.querySelectorAll(".certificate-container img").forEach(function (img) {
+        img.addEventListener("click", function () {
+            maximizeImage(this.src);
+        });
+    });
+
     // Expose functions globally
     window.toggleSection = toggleSection;
     window.closeSection = closeSection;
