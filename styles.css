@@ -243,51 +243,73 @@ body {
         display: none;
     }
 }
-
 /* Credentials Container */
 .credentials-container {
-    background: white;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Soft gradient background */
     padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ddd; /* Adds a sharp, clean border */
-    width: 90%; /* Responsive width */
-    max-width: 400px; /* Limit max width */
+    border-radius: 15px; /* Smooth rounded edges */
+    border: 1px solid #ccc; /* Light, clean border */
+    width: 90%;
+    max-width: 450px; /* Slightly wider for better readability */
     text-align: left;
-    position: sticky; /* Makes it stick while scrolling */
-    top: 10px; /* Sticks to top with some space */
-    z-index: 1000; /* Ensures it stays above other elements */
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Elevation Effect */
+.credentials-container:hover {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15); /* Subtle depth effect */
+    transform: translateY(-3px); /* Slight lift effect */
 }
 
 /* Dropdown Button */
 .dropdown-btn {
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    padding: 14px;
+    font-size: 17px;
     font-weight: bold;
-    background: #3498db;
+    background: linear-gradient(135deg, #3498db, #1e87d3); /* Modern button gradient */
     color: white;
-    border: 1px solid #2980b9; /* More defined border */
-    border-radius: 5px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
     text-align: left;
-    transition: background 0.3s, border 0.3s;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+/* Icon Rotation Effect */
+.dropdown-btn i {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate icon when dropdown is open */
+.dropdown-btn.active i {
+    transform: rotate(180deg);
+}
+
+/* Button Hover */
 .dropdown-btn:hover {
-    background: #2980b9;
-    border-color: #1f669a;
+    background: linear-gradient(135deg, #1e87d3, #0d6aad);
+    transform: scale(1.02); /* Slightly enlarges on hover */
 }
 
 /* Dropdown Content */
 .dropdown-content {
     display: none;
-    background: #ffffff; /* Pure white background */
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd; /* Adds clean separation */
-    overflow-y: auto; /* Scroll if content is too long */
-    max-height: 200px; /* Prevents excessive height */
+    background: #ffffff;
+    padding: 15px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 220px;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Show Dropdown */
@@ -295,13 +317,24 @@ body {
     display: block !important;
 }
 
-/* Remove Blurry Hover Effect */
-.credentials-container:hover,
-.dropdown-content:hover {
-    box-shadow: none !important;
+/* Individual Credentials Styling */
+.dropdown-content p {
+    font-size: 14.5px;
+    color: #333;
+    padding: 8px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Responsive Adjustments */
+/* Hover Effect on Credentials */
+.dropdown-content p:hover {
+    background: #e3e3e3;
+    transform: translateX(5px); /* Slight move on hover */
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
     .credentials-container {
         width: 100%;
@@ -309,12 +342,12 @@ body {
     }
 
     .dropdown-btn {
-        font-size: 14px;
-        padding: 10px;
+        font-size: 15px;
+        padding: 12px;
     }
 
     .dropdown-content {
-        max-height: 180px; /* Adjust height for small screens */
+        max-height: 180px;
     }
 }
 

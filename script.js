@@ -94,7 +94,44 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       
   
+      function toggleDropdown(id) {
+        var dropdown = document.getElementById(id);
+        var button = document.querySelector(`[onclick="toggleDropdown('${id}')"]`);
     
+        // Close other dropdowns if a new one is clicked
+        document.querySelectorAll(".dropdown-content").forEach((content) => {
+            if (content.id !== id) {
+                content.classList.remove("show");
+            }
+        });
+    
+        // Toggle current dropdown
+        dropdown.classList.toggle("show");
+    
+        // Rotate icon only for the active button
+        document.querySelectorAll(".dropdown-btn").forEach((btn) => {
+            btn.classList.remove("active");
+        });
+    
+        if (dropdown.classList.contains("show")) {
+            button.classList.add("active");
+        }
+    }
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".dropdown-container")) {
+            document.querySelectorAll(".dropdown-content").forEach((content) => {
+                content.classList.remove("show");
+            });
+            document.querySelectorAll(".dropdown-btn").forEach((btn) => {
+                btn.classList.remove("active");
+            });
+        }
+    });
+    
+
+
   
     // Expose functions globally so they can be called from HTML attributes
     window.toggleSection = toggleSection;
