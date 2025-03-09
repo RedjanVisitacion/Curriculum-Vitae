@@ -74,17 +74,43 @@
             <!-- Certificates Section -->
             <div class="resume_item resume_references">
                 <div class="resume_title">Certificates</div>
-                <div class="resume_info">
-                    <button class="toggle-btn" onclick="toggleCertificate()">View Certificates</button>
-                    <img id="certificate-img" src="Cert/DICT/DICT.png" alt="use data to see photos" class="certificate hidden">
-                </div>
+    <div class="resume_info">
+        
+        <!-- DICT Certificates -->
+        <button class="toggle-btn" onclick="toggleSection('dict-certificates')">DICT Certificates</button>
+        <div id="dict-certificates" class="certificate-container hidden">
+            <img src="Cert/DICT/DICT.png" alt="DICT Certificate">
+        </div>
+
+        <!-- TESDA Certificates -->
+        <button class="toggle-btn" onclick="toggleSection('tesda-certificates')">TESDA Certificates</button>
+        <div id="tesda-certificates" class="certificate-container hidden">
+            <img src="Cert/Tesda/Installing.png" alt="Installing Certificate">
+            <img src="Cert/Tesda/Introduction.png" alt="Introduction Certificate">
+            <img src="Cert/Tesda/Maintaining.png" alt="Maintaining Certificate">
+            <img src="Cert/Tesda/Networking.png" alt="Networking Certificate">
+            <img src="Cert/Tesda/Seting up Computer Servers.png" alt="Setting up Computer Servers">
+        </div>
+
+        <!-- Microsoft Certificates -->
+        <button class="toggle-btn" onclick="toggleSection('microsoft-certificates')">Microsoft Certificates</button>
+        <div id="microsoft-certificates" class="certificate-container hidden">
+            <img src="Cert/Microsoft/CAMH-V.png" alt="CAMH-V Certificate">
+            <img src="Cert/Microsoft/DCC.png" alt="DCC Certificate">
+            <img src="Cert/Microsoft/DTFOD365.png" alt="DTFOD365 Certificate">
+            <img src="Cert/Microsoft/FAIC.png" alt="FAIC Certificate">
+            <img src="Cert/Microsoft/FOGAI.png" alt="FOGAI Certificate">
+            <img src="Cert/Microsoft/ITML.png" alt="ITML Certificate">
+        </div>
+
+    </div>
 </div>
 
 <!-- JavaScript to Toggle Image -->
 <script>
-    function toggleCertificate() {
-        var img = document.getElementById("certificate-img");
-        img.classList.toggle("hidden");
+    function toggleSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        section.classList.toggle("hidden");
     }
 </script>
 
