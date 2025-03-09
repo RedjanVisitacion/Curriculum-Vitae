@@ -8,7 +8,7 @@
     <!-- External CSS Link -->
     <link rel="stylesheet" type="text/css" href="styles.css">
     
-	<link rel="icon" href="icon.png">
+	<link rel="icon" href="img/icon.png">
 
     <!-- Icons and Fonts -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <div class="resume_left">
         <!-- Profile Image -->
         <div class="resume_image">
-            <img src="pic.jpg" alt="use data to see photos">
+            <img src="img/pic.jpg" alt="use data to see photos">
         </div>
         
         <div class="resume_bottom">
@@ -70,6 +70,24 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Certificates Section -->
+<div class="resume_item resume_references">
+    <div class="resume_title">Certificates</div>
+    <div class="resume_info">
+        <button class="toggle-btn" onclick="toggleCertificate()">View Certificates</button>
+        <img id="certificate-img" src="certificate.jpg" alt="Certificate Image" class="certificate hidden">
+    </div>
+</div>
+
+<!-- JavaScript to Toggle Image -->
+<script>
+    function toggleCertificate() {
+        var img = document.getElementById("certificate-img");
+        img.classList.toggle("hidden");
+    }
+</script>
+
 
 			<!-- References Section -->
 			<div class="resume_item resume_references">
@@ -143,9 +161,8 @@
                 <p><i class="fas fa-briefcase"></i> Technician experience at Micron Electronics</p>
             </div>
         </div>
-
        
-
+       
         <!-- Button to Navigate to Next Resume -->
         <div class="resume_next">
             <button onclick="nextResume()">Go to Silver's CV</button>
