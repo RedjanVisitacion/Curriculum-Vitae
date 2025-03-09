@@ -264,7 +264,6 @@ body {
 .toggle-btn:hover {
     background-color: #0056b3;
 }
-
 /* For Certificate Toggle Button */
 .toggle-btn {
     padding: 10px;
@@ -283,20 +282,18 @@ body {
 .toggle-btn:hover {
     background-color: #0056b3;
 }
-
-/* Certificate Dropdown */
+/* Certificate Dropdown - Sticky */
 .certificate-container {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background: rgba(249, 249, 249, 0.98);
-    position: absolute;
-    top: 60px; /* Adjusted for better placement */
-    left: 50%;
-    transform: translateX(-50%);
+    position: sticky; /* Keeps it visible while scrolling */
+    top: 20px; /* Adjust to stick at the top */
     width: 90%;
     max-width: 600px;
-    display: none;
+    max-height: 80vh; /* Prevents overflow */
+    overflow-y: auto; /* Enables vertical scrolling */
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     animation: fadeIn 0.4s ease-in-out;
@@ -305,6 +302,25 @@ body {
 /* Show certificates */
 .certificate-container:not(.hidden) {
     display: block;
+}
+
+/* Scrollbar Styling */
+.certificate-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.certificate-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+.certificate-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+}
+
+.certificate-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /* Close Button (X) */
@@ -321,6 +337,28 @@ body {
 
 .close-btn:hover {
     color: #cc0000;
+}
+
+/* Toggle Button - Sticky */
+.toggle-btn {
+    position: sticky;
+    top: 10px; /* Adjust distance from top */
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin: 5px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    z-index: 1010; /* Higher than other elements */
+}
+
+.toggle-btn:hover {
+    background-color: #0056b3;
 }
 
 /* Certificate Images */
@@ -355,4 +393,22 @@ body {
 /* Hide class */
 .hidden {
     display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certificate-container {
+        width: 95%;
+        max-width: 90%;
+        max-height: 70vh; /* Adjust height for mobile */
+    }
+
+    .toggle-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .certificate-container img {
+        max-width: 90%;
+    }
 }
