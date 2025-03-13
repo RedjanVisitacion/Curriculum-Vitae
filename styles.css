@@ -192,6 +192,12 @@ body {
     display: none;
 }
 
+.ActiveS{
+    color: rgb(3, 168, 66);
+    font-size: x-small;
+}
+
+
 /* Enhanced Button */
 .resume_next {
     text-align: center;
@@ -523,3 +529,4 @@ body {
         max-width: 90%;
     }
 }
+
