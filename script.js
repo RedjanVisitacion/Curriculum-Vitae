@@ -130,8 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     
-
-
   
     // Expose functions globally so they can be called from HTML attributes
     window.toggleSection = toggleSection;

@@ -243,6 +243,8 @@ body {
         display: none;
     }
 }
+
+
 /* Credentials Container */
 .credentials-container {
     background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Soft gradient background */
