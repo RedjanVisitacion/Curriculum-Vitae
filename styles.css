@@ -9,7 +9,7 @@
 }
 
 body {
-    background: rgb(212, 39, 68);
+    background: linear-gradient(120deg, #0175b2, #003c6e);
     font-size: 14px;
     line-height: 1.6;
     display: flex;
