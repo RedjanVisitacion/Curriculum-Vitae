@@ -9,7 +9,7 @@
 }
 
 body {
-    background: linear-gradient(120deg, #0175b2, #003c6e);
+    background: #111;
     font-size: 14px;
     line-height: 1.6;
     display: flex;
@@ -17,6 +17,7 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    transition: background 0.5s ease;
 }
 
 .resume_wrapper {
@@ -26,21 +27,44 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border-radius: 12px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
-
+.resume_wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
 
 .resume_left {
     width: 35%;
-    background: linear-gradient(135deg, #1e1d24, #292930);
-    color: #fff;
+    background: #000;
+    color: #e0e0e0;
     padding-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume_left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(237, 27, 118, 0.15), transparent);
+    transition: all 0.3s ease;
+}
+
+.resume_left:hover::before {
+    transform: scale(1.1);
 }
 
 .resume_left .resume_image {
     width: 100%;
-    border-bottom: 4px solid #0175b2;
+    border-bottom: 4px solid #ed1b76;
+    position: relative;
+    overflow: hidden;
 }
 
 .resume_left .resume_image img {
@@ -49,17 +73,35 @@ body {
 }
 
 .resume_title {
-    color: #0175b2;
+    color: #ed1b76 !important;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 10px;
     letter-spacing: 2px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.resume_title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ed1b76;
+    transition: width 0.3s ease;
+}
+
+.resume_title:hover::after {
+    width: 100%;
 }
 
 .resume_left .resume_info {
-    color: #c2c2c2;
+    color: #331818;
     padding-left: 20px;
+    transition: all 0.3s ease;
 }
 
 .resume_left .resume_bottom {
@@ -69,6 +111,12 @@ body {
 .resume_item {
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.resume_item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
 }
 
 .resume_item:last-child {
@@ -77,16 +125,18 @@ body {
 
 .resume_namerole .name {
     font-size: 24px;
-    color: #fff;
+    color: #e0e0e0;
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 5px;
     letter-spacing: 2px;
+    transition: all 0.3s ease;
 }
 
 .resume_namerole .role {
-    color: #c2c2c2;
+    color: #e0e0e0;
     font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 .resume_contact .resume_info p {
@@ -97,7 +147,12 @@ body {
 }
 
 .resume_contact .resume_info p i {
-    color: #0175b2;
+    color: #ed1b76;
+    transition: all 0.3s ease;
+}
+
+.resume_contact .resume_info p:hover i {
+    transform: scale(1.2);
 }
 
 .resume_skills .skills_list {
@@ -122,35 +177,52 @@ body {
 .resume_skills .skills_bar span {
     display: block;
     height: 100%;
-    background: linear-gradient(90deg, #0175b2, #00aaff);
-    transition: width 0.5s ease-in-out;
+    background: linear-gradient(90deg, #ed1b76, #333);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.resume_skills .skills_bar span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 2s infinite;
 }
 
 /* Right Side Styling */
 .resume_right {
     width: 65%;
     padding: 30px;
-    color: #333;
+    color: #e0e0e0;
+    background: #181818;
+    transition: all 0.3s ease;
 }
 
 .resume_right .resume_namerole .name {
     font-size: 28px;
     color: #222;
+    transition: all 0.3s ease;
 }
 
 .resume_right .resume_namerole .role {
     font-size: 14px;
     text-transform: uppercase;
     color: #555;
+    transition: all 0.3s ease;
 }
 
 .resume_right .resume_title {
-    color: #0175b2;
+    color: #ed1b76 !important;
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 10px;
-    border-bottom: 2px solid #0175b2;
+    border-bottom: 2px solid #ed1b76;
     padding-bottom: 5px;
+    transition: all 0.3s ease;
 }
 
 .resume_data {
@@ -161,10 +233,11 @@ body {
 }
 
 .resume_data .year {
-    color: #0175b2;
+    color: #ed1b76;
     font-weight: 700;
     width: 100px;
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .resume_data .year::before {
@@ -174,8 +247,9 @@ body {
     top: 5px;
     width: 8px;
     height: 8px;
-    background: #0175b2;
+    background: #ed1b76;
     border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .resume_data .year::after {
@@ -185,18 +259,19 @@ body {
     top: 15px;
     width: 2px;
     height: 100%;
-    background: #0175b2;
+    background: #ed1b76;
+    transition: all 0.3s ease;
 }
 
 .resume_data:last-child .year::after {
     display: none;
 }
 
-.ActiveS{
+.ActiveS {
     color: rgb(3, 168, 66);
     font-size: x-small;
+    animation: pulse 2s infinite;
 }
-
 
 /* Enhanced Button */
 .resume_next {
@@ -205,21 +280,44 @@ body {
 }
 
 .resume_next button {
-    background: linear-gradient(120deg, #0175b2, #003c6e);
-    color: white;
+    background: linear-gradient(120deg, #ed1b76, #333);
+    color: #e0e0e0;
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
 .resume_next button:hover {
-    background: linear-gradient(120deg, #00aaff, #005a9e);
-    transform: scale(1.05);
+    background: linear-gradient(120deg, #ed1b76, #111);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Certificates Buttons */
+.resume_left .resume_bottom .resume_certificates button,
+.resume_left .resume_bottom .resume_contact .resume_info button,
+.resume_left .resume_bottom .resume_skills .skills_bar button,
+button.certificate-btn,
+button.certificate-button {
+    background: #ed1b76 !important;
+    color: #e0e0e0 !important;
+    border: none !important;
+    transition: background 0.3s;
+}
+
+.resume_left .resume_bottom .resume_certificates button:hover,
+.resume_left .resume_bottom .resume_contact .resume_info button:hover,
+.resume_left .resume_bottom .resume_skills .skills_bar button:hover,
+button.certificate-btn:hover,
+button.certificate-button:hover {
+    background: #b11356 !important;
 }
 
 /* Responsive Design */
@@ -250,11 +348,11 @@ body {
     }
 }
 
-
 /* Credentials Container */
 .credentials-container {
     background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Soft gradient background */
     padding: 20px;
+    color: rgb(0, 0, 0);
     border-radius: 15px; /* Smooth rounded edges */
     border: 1px solid #ccc; /* Light, clean border */
     width: 90%;
@@ -268,7 +366,7 @@ body {
 
 /* Elevation Effect */
 .credentials-container:hover {
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15); /* Subtle depth effect */
+    box-shadow: 0px 8px 15px rgba(90, 42, 42, 0.15); /* Subtle depth effect */
     transform: translateY(-3px); /* Slight lift effect */
 }
 
@@ -278,8 +376,8 @@ body {
     padding: 14px;
     font-size: 17px;
     font-weight: bold;
-    background: linear-gradient(135deg, #3498db, #1e87d3); /* Modern button gradient */
-    color: white;
+    background: linear-gradient(135deg, #404346, #ed1b76); /* Modern button gradient */
+    color: rgb(58, 54, 54);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -302,7 +400,7 @@ body {
 
 /* Button Hover */
 .dropdown-btn:hover {
-    background: linear-gradient(135deg, #1e87d3, #0d6aad);
+    background: linear-gradient(135deg, #1e87d3, #ed1b76);
     transform: scale(1.02); /* Slightly enlarges on hover */
 }
 
@@ -313,7 +411,7 @@ body {
     padding: 15px;
     margin-top: 8px;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid #ed1b76;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     max-height: 220px;
@@ -328,7 +426,7 @@ body {
 /* Individual Credentials Styling */
 .dropdown-content p {
     font-size: 14.5px;
-    color: #333;
+    color: #000000;
     padding: 8px;
     background: #f4f4f4;
     border-radius: 5px;
@@ -338,7 +436,7 @@ body {
 
 /* Hover Effect on Credentials */
 .dropdown-content p:hover {
-    background: #e3e3e3;
+    background: #2c2424;
     transform: translateX(5px); /* Slight move on hover */
 }
 
@@ -365,8 +463,8 @@ body {
 /* For Certificate */
 .toggle-btn {
     padding: 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: #ed1b76 !important;
+    color: #ed1b76 !important;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -378,7 +476,7 @@ body {
 }
 
 .toggle-btn:hover {
-    background-color: #0056b3;
+    background-color: #b11356 !important;
 }
 
 /* Certificate Dropdown - Sticky */
@@ -386,7 +484,7 @@ body {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background: rgba(249, 249, 249, 0.98);
+    background: rgba(66, 60, 60, 0.98);
     position: sticky; /* Keeps it visible while scrolling */
     top: 20px; /* Adjust to stick at the top */
     width: 90%;
@@ -528,4 +626,29 @@ body {
     .certificate-container img {
         max-width: 90%;
     }
+}
+
+.resume_left, .resume_left * {
+    color: #e0e0e0 !important;
+}
+
+.resume_left .resume_info, .resume_left .resume_namerole .role, .resume_left .resume_bottom, .resume_left .resume_item {
+    color: #e0e0e0 !important;
+}
+
+.resume_right, .resume_right * {
+    color: #e0e0e0 !important;
+    opacity: 1 !important;
+}
+
+.resume_right .resume_namerole .role, .resume_right .resume_info, .resume_right .resume_data .year {
+    color: #e0e0e0 !important;
+}
+
+.resume_title, .resume_right .resume_title {
+    color: #ed1b76 !important;
+}
+
+.resume_next button, .resume_next button * {
+    color: #e0e0e0 !important;
 }
