@@ -409,6 +409,7 @@ button.certificate-button:hover {
     display: none;
     background: #ffffff;
     padding: 15px;
+    color: black;
     margin-top: 8px;
     border-radius: 8px;
     border: 1px solid #ed1b76;
@@ -428,7 +429,7 @@ button.certificate-button:hover {
     font-size: 14.5px;
     color: #000000;
     padding: 8px;
-    background: #f4f4f4;
+    background: #2e2c2c;
     border-radius: 5px;
     margin-bottom: 5px;
     transition: all 0.3s ease-in-out;
