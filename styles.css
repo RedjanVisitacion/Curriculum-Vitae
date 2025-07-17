@@ -653,3 +653,73 @@ button.certificate-button:hover {
 .resume_next button, .resume_next button * {
     color: #e0e0e0 !important;
 }
+
+
+/*---PRINT PART---*/
+
+#printButton {
+      color:#707070;
+      background-color: #3a3939;
+      font-size: small;
+}
+
+:hover #printButton {
+      background-color: #3a3939;
+      color: #fff;
+}
+
+@media (max-width: 600px) {
+  #printButton {
+    display: none !important;
+  }
+}
+
+@media print {
+    html, body {
+      width: 216mm;
+      height: 356mm;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #181818 !important;
+      color: #fff !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      box-sizing: border-box;
+    }
+    #printButton {
+      display: none !important;
+    }
+    .resume_wrapper {
+      width: 100vw !important;
+      max-width: 200mm !important;
+      min-height: 336mm !important;
+      margin: 0 auto !important;
+      box-shadow: none !important;
+      border: none !important;
+      background: #181818 !important;
+      color: #fff !important;
+      page-break-inside: avoid !important;
+      display: flex !important;
+      flex-direction: row !important;
+    }
+    .resume_left, .resume_right {
+      background: #181818 !important;
+      color: #fff !important;
+    }
+    /* Fix for colored bars and buttons */
+    .skills_bar span,
+    .toggle-btn,
+    .dropdown-btn,
+    .certificate-container {
+      background: #ff4081 !important;
+      color: #fff !important;
+    }
+    /* Remove default print header/footer */
+    @page {
+      size: Legal;
+      margin: 0;
+    }
+    body::after, body::before {
+      display: none !important;
+    }
+  }
